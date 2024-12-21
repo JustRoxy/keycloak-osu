@@ -7,7 +7,7 @@ import org.keycloak.models.KeycloakSession;
 
 public class OsuIdentityProviderFactory extends AbstractIdentityProviderFactory<OsuIdentityProvider>
         implements SocialIdentityProviderFactory<OsuIdentityProvider> {
-    public static final String PROVIDER_ID = "osu!";
+    public static final String PROVIDER_ID = "osu";
 
     @Override
     public String getName() {
