@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/JustRoxy/keycloak-osu/compare/v1.0.2...v1.0.3) (2024-12-21)
+
+
+### Bug Fixes
+
+* change profile_url to correct one ([a5ccbdf](https://github.com/JustRoxy/keycloak-osu/commit/a5ccbdf4c22406e6f96be4b4e7bed83f1d0aaed6))
+
 ## [1.0.2](https://github.com/JustRoxy/keycloak-osu/compare/v1.0.1...v1.0.2) (2024-12-21)
 
 
