@@ -18,7 +18,7 @@ public class OsuIdentityProvider extends AbstractOAuth2IdentityProvider<OsuIdent
     private static final Logger log = Logger.getLogger(OsuIdentityProvider.class);
 
     public static final String AUTH_URL = "https://osu.ppy.sh/oauth/authorize";
-    public static final String TOKEN_URL = " https://osu.ppy.sh/oauth/token";
+    public static final String TOKEN_URL = "https://osu.ppy.sh/oauth/token";
     public static final String PROFILE_URL = "https://osu.ppy.sh/api/v2/users/me";
     public static final String DEFAULT_SCOPE = "identify";
 
