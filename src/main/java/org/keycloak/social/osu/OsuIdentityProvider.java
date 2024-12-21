@@ -44,8 +44,6 @@ public class OsuIdentityProvider extends AbstractOAuth2IdentityProvider<OsuIdent
         String userId = getJsonProperty(profile, "id");
         String username = getJsonProperty(profile, "username");
 
-        log.info("Id: " + userId);
-        log.info("Username: " + username);
         BrokeredIdentityContext user = new BrokeredIdentityContext(userId, getConfig());
 
         user.setId(userId);
@@ -60,13 +58,10 @@ public class OsuIdentityProvider extends AbstractOAuth2IdentityProvider<OsuIdent
     @Override
     protected BrokeredIdentityContext doGetFederatedIdentity(String accessToken) {
         log.debug("doGetFederatedIdentity()");
-        log.info("Access Token" + accessToken);
         JsonNode profile;
 
         try {
-            var response = SimpleHttp.doGet(PROFILE_URL, session).header("Authorization", "Bearer " + accessToken);
-            log.info(response.asString());
-            profile = response.asJson();
+            profile = SimpleHttp.doGet(PROFILE_URL, session).header("Authorization", "Bearer " + accessToken).asJson();
         } catch (Exception e) {
             throw new IdentityBrokerException("Could not obtain user profile from osu!", e);
         }
