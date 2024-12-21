@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/JustRoxy/keycloak-osu/compare/v1.0.0...v1.0.1) (2024-12-21)
+
+
+### Bug Fixes
+
+* change PROVIDER_ID to osu ([06ade50](https://github.com/JustRoxy/keycloak-osu/commit/06ade509d9e7050bf9596b01f50c6c6f62820a1d))
+
 # 1.0.0 (2024-12-21)
 
 
