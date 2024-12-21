@@ -13,7 +13,7 @@ Then deploy it into `$KEYCLOAK_HOME/providers` directory.
 
 ### Discord
 
-Access to [Discord Developer Portal](https://discord.com/developers/applications) and create your application.
+Go to [osu! settings](https://osu.ppy.sh/home/account/edit) and create OAuth application.
 You can get Client ID and Client Secret from the created application.
 
 ### Keycloak
@@ -22,12 +22,13 @@ Note: You don't need to set up the theme in `master` realm from v0.3.0.
 
 1. Add `Osu!` Identity Provider in the realm which you want to configure.
 2. In the `Osu!` identity provider page, set `Client Id` and `Client Secret`.
+3. `identify` scope is set by default, add your other scopes as needed 
 
 
 ## Source Build
 
 Clone this repository and run `mvn package`.
-You can see `keycloak-discord-<version>.jar` under `target` directory.
+You can see `keycloak-osu-<version>.jar` under `target` directory.
 
 
 ## Licence
@@ -36,6 +37,6 @@ You can see `keycloak-discord-<version>.jar` under `target` directory.
 
 
 ## Author
-
-- [Hiroyuki Wada](https://github.com/wadahiro)
+- [Hiroyuki Wada](https://github.com/wadahiro) (Discord Identity Provider)
+- [JustRoxy](https://github.com/JustRoxy)
 
