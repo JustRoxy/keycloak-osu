@@ -19,7 +19,7 @@ public class OsuIdentityProvider extends AbstractOAuth2IdentityProvider<OsuIdent
 
     public static final String AUTH_URL = "https://osu.ppy.sh/oauth/authorize";
     public static final String TOKEN_URL = "https://osu.ppy.sh/oauth/token";
-    public static final String PROFILE_URL = "https://osu.ppy.sh/api/v2/users/me";
+    public static final String PROFILE_URL = "https://osu.ppy.sh/api/v2/me";
     public static final String DEFAULT_SCOPE = "identify";
 
     public OsuIdentityProvider(KeycloakSession session, OsuIdentityProviderConfig config) {
@@ -41,10 +41,12 @@ public class OsuIdentityProvider extends AbstractOAuth2IdentityProvider<OsuIdent
 
     @Override
     protected BrokeredIdentityContext extractIdentityFromProfile(EventBuilder event, JsonNode profile) {
-        BrokeredIdentityContext user = new BrokeredIdentityContext(getJsonProperty(profile, "id"), getConfig());
-
         String userId = getJsonProperty(profile, "id");
         String username = getJsonProperty(profile, "username");
+
+        log.info("Id: " + userId);
+        log.info("Username: " + username);
+        BrokeredIdentityContext user = new BrokeredIdentityContext(userId, getConfig());
 
         user.setId(userId);
         user.setUsername(username);
@@ -58,13 +60,18 @@ public class OsuIdentityProvider extends AbstractOAuth2IdentityProvider<OsuIdent
     @Override
     protected BrokeredIdentityContext doGetFederatedIdentity(String accessToken) {
         log.debug("doGetFederatedIdentity()");
+        log.info("Access Token" + accessToken);
         JsonNode profile;
+
         try {
-            profile = SimpleHttp.doGet(PROFILE_URL, session).header("Authorization", "Bearer " + accessToken).asJson();
+            var response = SimpleHttp.doGet(PROFILE_URL, session).header("Authorization", "Bearer " + accessToken);
+            log.info(response.asString());
+            profile = response.asJson();
         } catch (Exception e) {
             throw new IdentityBrokerException("Could not obtain user profile from osu!", e);
         }
 
+        log.info("Profile: " + profile.asText());
         return extractIdentityFromProfile(null, profile);
     }
 
