@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/JustRoxy/keycloak-osu/compare/v1.0.3...v1.0.4) (2024-12-21)
+
+
+### Bug Fixes
+
+* remove debug logging ([52d4683](https://github.com/JustRoxy/keycloak-osu/commit/52d4683b3cebbbdd38375b599ebdb4d134765d15))
+
 ## [1.0.3](https://github.com/JustRoxy/keycloak-osu/compare/v1.0.2...v1.0.3) (2024-12-21)
 
 
