@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/JustRoxy/keycloak-osu/compare/v1.0.1...v1.0.2) (2024-12-21)
+
+
+### Bug Fixes
+
+* trim space from token oauth url ([76249cc](https://github.com/JustRoxy/keycloak-osu/commit/76249cca3b6c6fbb27411c4a6601dc8dbb2ba8d1))
+
 ## [1.0.1](https://github.com/JustRoxy/keycloak-osu/compare/v1.0.0...v1.0.1) (2024-12-21)
 
 
